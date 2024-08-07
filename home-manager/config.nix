@@ -14,6 +14,8 @@ with lib;
 
   options.pakky.programs.nvim.enable = mkEnableOption "Setup neovim";
 
+  options.pakky.programs.starship.enable = mkEnableOption "Setup starship";
+
   options.pakky.programs.zsh.default = mkEnableOption "Use zsh as default shell";
   options.pakky.programs.zsh.enable = mkEnableOption "Setup zsh";
 

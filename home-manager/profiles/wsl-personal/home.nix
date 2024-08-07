@@ -70,6 +70,7 @@
     programs = {
       atuin.enable = true;
       nvim.enable = true;
+      starship.enable = true;
       zsh.default = true;
       zsh.enable = true;
     };
@@ -79,6 +80,7 @@
     ../../modules/atuin
     ../../modules/git/personal.nix
     ../../modules/nvim
+    ../../modules/starship
     ../../modules/zellij
     ../../modules/zsh
   ];

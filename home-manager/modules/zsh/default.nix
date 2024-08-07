@@ -13,6 +13,8 @@ in
 
       initExtra = ''
       ${if cfg.programs.atuin.enable then "eval ''\"$(atuin init zsh)''\"" else ""}
+
+      ${if cfg.programs.starship.enable then "eval ''\"$(starship init zsh)''\"" else ""}
       '';
 
       shellAliases = rec {
