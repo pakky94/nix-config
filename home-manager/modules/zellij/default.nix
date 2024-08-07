@@ -1,7 +1,7 @@
 { lib, pkgs, config, ... }:
 with lib;
 {
-  config = {
+  config = mkIf config.pakky.programs.zellij.enable {
     xdg = {
       enable = true;
       configFile = {

@@ -69,19 +69,23 @@
   pakky = {
     programs = {
       atuin.enable = true;
+
+      git = {
+        enable = true;
+        profile = "personal";
+      };
+
       nvim.enable = true;
       starship.enable = true;
-      zsh.default = true;
-      zsh.enable = true;
+
+      zsh = {
+        default = true;
+        enable = true;
+      };
     };
   };
 
   imports = [
-    ../../modules/atuin
-    ../../modules/git/personal.nix
-    ../../modules/nvim
-    ../../modules/starship
-    ../../modules/zellij
-    ../../modules/zsh
+    ../../modules
   ];
 }
