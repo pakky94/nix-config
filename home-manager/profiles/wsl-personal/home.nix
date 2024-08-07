@@ -12,7 +12,9 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    cargo
     gcc
+    go
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -77,6 +79,7 @@
 
       nvim.enable = true;
       starship.enable = true;
+      zellij.enable = true;
 
       zsh = {
         default = true;
