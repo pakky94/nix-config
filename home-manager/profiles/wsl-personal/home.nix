@@ -12,7 +12,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    eza
     gcc
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -69,6 +68,7 @@
 
   pakky = {
     programs = {
+      atuin.enable = true;
       nvim.enable = true;
       zsh.default = true;
       zsh.enable = true;
@@ -76,6 +76,7 @@
   };
 
   imports = [
+    ../../modules/atuin
     ../../modules/git/personal.nix
     ../../modules/nvim
     ../../modules/zellij

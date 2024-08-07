@@ -4,8 +4,6 @@ let
   cfg = config.pakky.programs.nvim;
 in
 {
-  options.pakky.programs.nvim.enable = mkEnableOption "Setup neovim";
-
   config = mkIf cfg.enable {
     xdg = {
       enable = true;
