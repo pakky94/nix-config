@@ -8,17 +8,14 @@ in
     programs.zsh = {
       enable = true;
 
+      autocd = true;
+      autosuggestion.enable = true;
+      enableCompletion = true;
+
       dotDir = ".config/zsh";
       sessionVariables = { ZDOTDIR = "/home/${cfg.home-manager.username}/.config/zsh"; };
 
-      initExtra = ''
-      ${if cfg.programs.atuin.enable then "eval ''\"$(atuin init zsh)''\"" else ""}
-
-      ${if cfg.programs.starship.enable then "eval ''\"$(starship init zsh)''\"" else ""}
-      '';
-
       shellAliases = rec {
-        ls = "eza";
       };
     };
 
