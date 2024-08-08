@@ -90,5 +90,6 @@
 
   imports = [
     ../../modules
+    ../../scripts
   ];
 }
