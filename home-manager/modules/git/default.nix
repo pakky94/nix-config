@@ -3,6 +3,7 @@ with lib;
 {
   imports = [
     ./personal.nix
+    ./work.nix
   ];
 
   config = mkIf (config.pakky.programs.git.enable) {
@@ -44,6 +45,8 @@ with lib;
     };
 
     home.packages = with pkgs; mkIf config.pakky.programs.git.enable [
+      pkgs.pre-commit
+
       (writeShellScriptBin "git-bare-clone" ''
 set -e
 

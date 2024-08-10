@@ -2,10 +2,10 @@
 with lib;
 let cfg = config.pakky.programs.git; in
 {
-  config = mkIf (cfg.enable && cfg.profile == "personal") {
+  config = mkIf (cfg.enable && cfg.profile == "work") {
     programs = {
       git = {
-        userEmail = "marco@pacchialat.com";
+        userEmail = "marco.pacchialat@euris.it";
         userName = "Marco Pacchialat";
       };
     };
