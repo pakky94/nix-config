@@ -12,7 +12,9 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    atac
     cargo
+    cmake
     gcc
     go
 
@@ -77,6 +79,7 @@
         profile = "personal";
       };
 
+      kubernetes.enable = true;
       nvim.enable = true;
       starship.enable = true;
       zellij.enable = true;

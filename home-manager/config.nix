@@ -20,6 +20,8 @@ with lib;
       example = "personal | work";
   };
 
+  options.pakky.programs.kubernetes.enable = mkEnableOption "Setup kubernetes tools";
+
   options.pakky.programs.nvim.enable = mkEnableOption "Setup neovim";
 
   options.pakky.programs.starship.enable = mkEnableOption "Setup starship";

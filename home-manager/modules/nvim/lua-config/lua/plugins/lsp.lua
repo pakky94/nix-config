@@ -63,6 +63,7 @@ return {
     local servers = {
       -- clangd = {},
       gopls = {},
+      nil_ls = {},
       openscad_lsp = {
         search_paths = "~/.local/share/OpenSCAD/libraries/"
       },
