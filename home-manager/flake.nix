@@ -2,7 +2,6 @@
   description = "Home Manager configuration of pakky";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -18,8 +17,16 @@
       homeConfigurations."wsl-personal" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ 
-	  ./config.nix
-          ./profiles/wsl-personal/home.nix 
+          ./config.nix
+          ./profiles/wsl-personal.nix 
+        ];
+      };
+
+      homeConfigurations."wsl-work" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ 
+          ./config.nix
+          ./profiles/wsl-work.nix
         ];
       };
     };

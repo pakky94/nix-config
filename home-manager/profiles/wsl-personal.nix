@@ -15,6 +15,7 @@
     atac
     cargo
     cmake
+    entr
     gcc
     go
 
@@ -92,7 +93,7 @@
   };
 
   imports = [
-    ../../modules
-    ../../scripts
+    ../modules
+    ../scripts
   ];
 }
