@@ -6,6 +6,11 @@ with lib;
   ];
 
   config = mkIf (config.pakky.programs.git.enable) {
+    programs = {
+      lazygit = {
+        enable = true;
+      };
+    };
 
     home.packages = with pkgs; mkIf config.pakky.programs.git.enable [
       (writeShellScriptBin "git-bare-clone" ''

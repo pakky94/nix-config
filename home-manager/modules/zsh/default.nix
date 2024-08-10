@@ -16,6 +16,7 @@ in
       sessionVariables = { ZDOTDIR = "/home/${cfg.home-manager.username}/.config/zsh"; };
 
       shellAliases = rec {
+        lg = "lazygit";
       };
     };
 
