@@ -13,7 +13,19 @@ in
       enableCompletion = true;
 
       dotDir = ".config/zsh";
-      sessionVariables = { ZDOTDIR = "/home/${cfg.home-manager.username}/.config/zsh"; };
+      sessionVariables = { 
+        ZDOTDIR = "/home/${cfg.home-manager.username}/.config/zsh"; 
+        # SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent.socket";
+      };
+
+#       initExtra = ''
+# # SSH Agent should be running, once
+# runcount=$(ps -ef | grep "ssh-agent" | grep -v "grep" | wc -l)
+# if [ $runcount -eq 0 ]; then
+#     echo Starting SSH Agent
+#     eval $(ssh-agent -s -a $SSH_AUTH_SOCK)
+# fi
+#       '';
 
       shellAliases = rec {
         lg = "lazygit";
