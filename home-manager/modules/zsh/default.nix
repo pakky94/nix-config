@@ -28,6 +28,7 @@ in
 #       '';
 
       shellAliases = rec {
+        cat = "bat --pager=never";
         lg = "lazygit";
       };
     };
