@@ -37,6 +37,21 @@ with lib;
           "develop-eggs/"
           "dist/"
         ];
+
+        extraConfig = {
+          commit.verbose = "true";
+          merge.conflictStyle = "diff3";
+          pull.ff = "only";
+          push.autoSetupRemote = "true";
+          rerere = {
+            autoupdate = "true";
+            enabled = "true";
+          };
+          tag.sort = "version:refname";
+          url = {
+            "git@github.com:".insteadOf = "gh:";
+          };
+        };
       };
 
       lazygit = {
