@@ -22,6 +22,14 @@
         ];
       };
 
+      homeConfigurations."steamdeck" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./config.nix
+          ./profiles/steamdeck.nix
+        ];
+      };
+
       homeConfigurations."wsl-work" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ 
