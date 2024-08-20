@@ -31,6 +31,7 @@ in
         cat = "bat --pager=never";
         lg = "lazygit";
         nixdev = "nix develop -c $SHELL";
+        zz = "z -";
       };
     };
 
@@ -42,6 +43,10 @@ in
     programs.dircolors = {
       enable = true;
       enableZshIntegration = true;
+    };
+
+    programs.direnv = {
+      enable = true;
     };
 
     programs.eza = {
