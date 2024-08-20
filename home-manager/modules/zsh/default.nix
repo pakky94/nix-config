@@ -30,6 +30,7 @@ in
       shellAliases = rec {
         cat = "bat --pager=never";
         lg = "lazygit";
+        nixdev = "nix develop -c $SHELL";
       };
     };
 
