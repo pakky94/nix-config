@@ -7,6 +7,11 @@
 
   home.stateVersion = "24.05";
 
+  nix = {
+    package = pkgs.nix;
+    settings.experimental-features = [ "nix-command" "flakes" ];
+  };
+
   home.packages = with pkgs; [
     atac
     cargo
