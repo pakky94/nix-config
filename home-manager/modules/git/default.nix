@@ -13,8 +13,10 @@ with lib;
         ignores = [
           "tags"
           "*.swp"
+
           # Nix builds
           "result"
+
           # Core latex/pdflatex auxiliary files
           "*.aux"
           "*.lof"
@@ -28,6 +30,7 @@ with lib;
           "*.cb"
           "*.cb2"
           ".*.lb"
+
           # Python
           "__pycache__/"
           "*.py[cod]"
@@ -36,6 +39,10 @@ with lib;
           "build/"
           "develop-eggs/"
           "dist/"
+
+          # local env files
+          ".envrc"
+          ".direnv"
         ];
 
         extraConfig = {
