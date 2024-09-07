@@ -1,5 +1,4 @@
-{ lib, pkgs, config, ... }:
-{
+{ lib, pkgs, config, ... }: {
   pakky.home-manager.username = "pakky";
 
   # Home Manager needs a bit of information about you and the paths it should
