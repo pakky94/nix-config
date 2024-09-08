@@ -10,7 +10,7 @@ let cfg = config.pakky.programs.git; in
         extraConfig = {
           credential.helper = "store --file ~/.git-credentials";
           url = {
-            "https://tfshub.crifnet.com:8443/CRIF/ESG/_git/".insteadOf = "tfs:";
+            "https://tfshub.crifnet.com:8443/CRIF/ESG/_git/".insteadOf = "esg:";
           };
         };
       };
