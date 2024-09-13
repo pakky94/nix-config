@@ -12,8 +12,9 @@
   };
 
   outputs = { nixpkgs, home-manager, ... }:
+    # NixOS profiles
 
-
+    # Home manager standalone profiles
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
