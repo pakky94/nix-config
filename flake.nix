@@ -9,38 +9,43 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    jovian-nixos.url = "github:Jovian-Experiments/Jovian-NixOS";
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, jovian-nixos, ... } @inputs: {
     # NixOS profiles
+    nixosConfigurations."steamdeck" = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        jovian-nixos.nixosModules.default
+      ];
+    };
 
     # Home manager standalone profiles
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      homeConfigurations."wsl-personal" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ 
-          ./modules/core.nix
-          ./home-manager/profiles/wsl-personal.nix 
-        ];
-      };
-
-      homeConfigurations."steamdeck" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./modules/core.nix
-          ./home-manager/profiles/steamdeck.nix
-        ];
-      };
-
-      homeConfigurations."wsl-work" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ 
-          ./modules/core.nix
-          ./home-manager/profiles/wsl-work.nix
-        ];
-      };
+    homeConfigurations."wsl-personal" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = [
+        ./modules/core.nix
+        ./home-manager/profiles/wsl-personal.nix
+      ];
     };
+
+    homeConfigurations."steamdeck" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = [
+        ./modules/core.nix
+        ./home-manager/profiles/steamdeck.nix
+      ];
+    };
+
+    homeConfigurations."wsl-work" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = [
+        ./modules/core.nix
+        ./home-manager/profiles/wsl-work.nix
+      ];
+    };
+
+  };
 }
