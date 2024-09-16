@@ -18,6 +18,8 @@
     nixosConfigurations."steamdeck" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
+        ./modules/core.nix
+        ./hosts/steamdeck
         jovian-nixos.nixosModules.default
       ];
     };
