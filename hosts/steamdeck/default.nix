@@ -14,6 +14,10 @@ in {
     ./home-manager.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   jovian = {
     steam.enable = true;
     devices.steamdeck = {
@@ -21,6 +25,7 @@ in {
     };
   };
 
+  services.xserver.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
 
   # TODO: check this
