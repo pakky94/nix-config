@@ -10,7 +10,9 @@ let
   #   ref = "development";
   # };
 in {
-  imports = [];
+  imports = [
+    ./home-manager.nix
+  ];
 
   jovian = {
     steam.enable = true;
@@ -34,7 +36,7 @@ in {
   };
 
   # Create user
-  users.users.myUsername = {
+  users.users."${myUsername}" = {
     isNormalUser = true;
     description = myUserdescription;
   };

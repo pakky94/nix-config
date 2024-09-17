@@ -2,6 +2,7 @@
 with lib;
 {
   imports = [
+    ../../../modules/core.nix
     ./personal.nix
     ./work.nix
   ];

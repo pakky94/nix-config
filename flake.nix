@@ -20,6 +20,7 @@
       modules = [
         ./modules/core.nix
         ./hosts/steamdeck
+        home-manager.nixosModules.home-manager
         jovian-nixos.nixosModules.default
       ];
     };
