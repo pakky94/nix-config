@@ -4,6 +4,9 @@
     ./config.nix
   ];
 
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];
+  };
 /*
   # registry entries
   nix.registry = {

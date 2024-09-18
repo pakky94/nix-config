@@ -2,7 +2,7 @@
 with lib;
 let cfg = config.pakky.programs.kubernetes; in
 {
-  config.home.packages = [ 
+  home.packages = [
     pkgs.k9s
     pkgs.stern
   ];

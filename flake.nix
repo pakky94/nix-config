@@ -21,6 +21,11 @@
         ./modules/core.nix
         ./hosts/steamdeck
         home-manager.nixosModules.home-manager
+	{
+	  home-manager.useGlobalPkgs = true;
+	  home-manager.useUserPackages = true;
+	  home-manager.users.pakky = import ./hosts/steamdeck/home-manager.nix;
+	}
         jovian-nixos.nixosModules.default
       ];
     };

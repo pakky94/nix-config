@@ -11,7 +11,7 @@ let
   # };
 in {
   imports = [
-    ./home-manager.nix
+    ./hardware-configuration.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -26,7 +26,26 @@ in {
   };
 
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
+
+  # services.xserver.displayManager.gdm.wayland = true;
+
+  services.xserver.displayManager.lightdm = {
+    enable = true;
+    greeter.enable = true;
+    greeters.slick = {
+      enable = true;
+      extraConfig = ''
+[greeter]
+keyboard=onboard
+      '';
+    };
+  };
+
+  # services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.wayland.enable = true;
+  # services.displayManager.sddm.settings = {
+  #   General.InputMethod = "maliit-keyboard";
+  # };
 
   # TODO: check this
   # services.xserver.displayManager.gdm.wayland = lib.mkForce true; # lib.mkForce is only required on my setup because I'm using some other NixOS configs that conflict with this value
@@ -36,14 +55,25 @@ in {
 
   # Enable GNOME
   # sound.enable = true; TODO: remove
+
   services.xserver.desktopManager.gnome = {
     enable = true;
+#     extraGSettingsOverrides = ''
+# [org.gnome.desktop.a11y.applications]
+# screen-keyboard-enabled=true
+#     '';
+  };
+
+  programs = {
+    zsh.enable = true;
   };
 
   # Create user
   users.users."${myUsername}" = {
     isNormalUser = true;
     description = myUserdescription;
+    extraGroups = [ "wheel" ];
+    shell = pkgs.zsh;
   };
 
   # TODO: check this, what does it do?
@@ -99,10 +129,18 @@ in {
   */
 
   environment.systemPackages = with pkgs; [
-    gnome.gnome-terminal
+    dconf-editor
+    git
+    gnome-terminal
     jupiter-dock-updater-bin
+    maliit-keyboard
+    neovim
+    onboard
     steamdeck-firmware
   ];
+
+  services.xserver.xkb.layout = "us";
+  time.timeZone = "Europe/Rome";
 
   system.stateVersion = "24.05";
 }

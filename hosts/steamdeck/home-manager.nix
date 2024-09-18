@@ -1,24 +1,31 @@
-{ config, pkgs, lib, home-manager, ... }:
+{ config, pkgs, ... }:
 {
-  config.home-manager.users."pakky" = {
-    home.username = "pakky";
-    home.homeDirectory = "/home/pakky";
-    home.stateVersion = "24.05";
+  config.home.username = "pakky";
+  config.home.homeDirectory = "/home/pakky";
+  config.home.stateVersion = "24.05";
 
-    home.packages = with pkgs; [
-      atac
-      cargo
-      cmake
-      entr
-      gcc
-      go
-    ];
+  config.home.packages = with pkgs; [
+    atac
+    cargo
+    cmake
+    entr
+    gcc
+    go
+  ];
 
-    imports = [
-      ../../home-manager/modules
-      ../../home-manager/scripts
-    ];
+  imports = [
+    ../../home-manager/modules
+    ../../home-manager/scripts
+  ];
+
+  #config.programs.dconf.enable = true;
+
+  config.dconf.settings = {
+    "org/gnome/mutter" = {
+      edge-tiling = true;
+    };
   };
+
 
   config.pakky = {
     home-manager.username = "pakky";
@@ -40,9 +47,4 @@
       };
     };
   };
-
-  # imports = [
-  #   ../../home-manager/modules
-  #   ../../home-manager/scripts
-  # ];
 }
