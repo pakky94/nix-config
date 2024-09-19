@@ -42,6 +42,7 @@
 
       nvim.enable = true;
       starship.enable = true;
+      wezterm.enable = true;
       zellij.enable = true;
 
       zsh = {

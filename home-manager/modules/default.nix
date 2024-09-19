@@ -10,6 +10,7 @@
     ./kubernetes
     ./nvim
     ./starship
+    ./wezterm
     ./zellij
     ./zsh
   ];

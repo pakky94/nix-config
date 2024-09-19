@@ -25,6 +25,18 @@ in {
     };
   };
 
+  fonts = {
+    packages = with pkgs; [
+      jetbrains-mono
+      (nerdfonts.override { fonts = [ "CascadiaCode" "CascadiaMono" "FiraCode" ]; })
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+    ];
+    fontDir.enable = true;
+    fontconfig.enable = true;
+  };
+
   services.xserver.enable = true;
 
   # services.xserver.displayManager.gdm.wayland = true;

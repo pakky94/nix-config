@@ -26,6 +26,7 @@ with lib;
 
   options.pakky.programs.starship.enable = mkEnableOption "Setup starship";
 
+  options.pakky.programs.wezterm.enable = mkEnableOption "Setup wezterm";
   options.pakky.programs.zellij.enable = mkEnableOption "Setup zellij";
 
   options.pakky.programs.zsh.default = mkEnableOption "Use zsh as default shell";
