@@ -18,7 +18,7 @@
     ../../home-manager/scripts
   ];
 
-  #config.programs.dconf.enable = true;
+  config.programs.firefox.enable = true;
 
   config.dconf.settings = {
     "org/gnome/mutter" = {
