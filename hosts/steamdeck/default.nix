@@ -37,6 +37,13 @@ in {
     fontconfig.enable = true;
   };
 
+  # allow steam to load fonts
+  system.userActivationScripts.linktosharedfolder.text = ''
+if [[ ! -h "$HOME/.local/share/fonts" ]]; then
+  ln -s "/run/current-system/sw/share/X11/fonts" "$HOME/.local/share/fonts"
+fi
+  '';
+
   services.xserver.enable = true;
 
   # services.xserver.displayManager.gdm.wayland = true;
