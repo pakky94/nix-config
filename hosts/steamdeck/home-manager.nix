@@ -21,6 +21,9 @@
   config.programs.firefox.enable = true;
 
   config.dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
     "org/gnome/mutter" = {
       edge-tiling = true;
     };
