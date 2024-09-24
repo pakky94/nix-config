@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   config.home.username = "pakky";
   config.home.homeDirectory = "/home/pakky";
@@ -11,6 +11,7 @@
     entr
     gcc
     go
+    keepassxc
   ];
 
   imports = [
@@ -21,6 +22,11 @@
   config.programs.firefox.enable = true;
 
   config.dconf.settings = {
+    "org/gnome/desktop/input-sources" = {
+      mru-sources = "[('xkb', 'us'), ('xkb', 'us+alt-intl'), ('ibus', 'anthy')]";
+      sources = "[('xkb', 'us'), ('ibus', 'anthy')]";
+      xkb-options = "['terminate:ctrl_alt_bksp', 'compose:ralt', 'lv3:menu_switch']";
+    };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
     };
