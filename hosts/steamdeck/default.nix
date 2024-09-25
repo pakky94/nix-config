@@ -94,6 +94,7 @@ keyboard=onboard
     git
     gnomeExtensions.dock-from-dash
     gnome-terminal
+    gnome-tweaks
     jupiter-dock-updater-bin
     maliit-keyboard
     neovim
