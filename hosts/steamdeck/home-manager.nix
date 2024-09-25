@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   config.home.username = "pakky";
   config.home.homeDirectory = "/home/pakky";
@@ -21,11 +21,13 @@
 
   config.programs.firefox.enable = true;
 
-  config.dconf.settings = {
+  config.dconf.settings = with lib.hm.gvariant; {
     "org/gnome/desktop/input-sources" = {
-      mru-sources = "[('xkb', 'us'), ('xkb', 'us+alt-intl'), ('ibus', 'anthy')]";
-      sources = "[('xkb', 'us'), ('ibus', 'anthy')]";
-      xkb-options = "['terminate:ctrl_alt_bksp', 'compose:ralt', 'lv3:menu_switch']";
+      sources = [
+        (mkTuple [ "xkb" "us" ])
+        (mkTuple [ "ibus" "anthy" ])
+      ];
+      xkb-options = [ "'terminate:ctrl_alt_bksp'" "'compose:ralt'" ];
     };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
