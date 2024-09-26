@@ -32,6 +32,9 @@
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
     };
+    "org/gnome/desktop/peripherals/mouse" = {
+      accel-profile = "flat";
+    };
     "org/gnome/mutter" = {
       edge-tiling = true;
     };
