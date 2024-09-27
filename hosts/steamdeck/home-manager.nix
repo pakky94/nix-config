@@ -27,7 +27,7 @@
         (mkTuple [ "xkb" "us" ])
         (mkTuple [ "ibus" "anthy" ])
       ];
-      xkb-options = [ "'terminate:ctrl_alt_bksp'" "'compose:ralt'" ];
+      xkb-options = [ "terminate:ctrl_alt_bksp" "compose:ralt" ];
     };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
