@@ -7,6 +7,7 @@
   imports = [
     ./atuin
     ./git
+    ./kitty
     ./kubernetes
     ./nvim
     ./starship

@@ -51,6 +51,7 @@
         profile = "personal";
       };
 
+      kitty.enable = true;
       nvim.enable = true;
       starship.enable = true;
       wezterm.enable = true;
