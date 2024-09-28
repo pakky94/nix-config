@@ -97,6 +97,11 @@ fi
     ibus.engines = with pkgs.ibus-engines; [ anthy ];
   };
 
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
   environment.systemPackages = with pkgs; [
     dconf-editor
     git
@@ -105,7 +110,6 @@ fi
     gnome-tweaks
     jupiter-dock-updater-bin
     maliit-keyboard
-    neovim
     onboard
     steamdeck-firmware
   ];
