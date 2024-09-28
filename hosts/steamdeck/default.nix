@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 let
   myUsername = "pakky";
   myUserdescription = "Marco Pacchialat";
@@ -39,15 +39,22 @@ fi
 
   services.xserver.enable = true;
 
-  services.xserver.displayManager.lightdm = {
+
+  services.displayManager.sddm = {
     enable = true;
-    greeter.enable = true;
-    greeters.slick = {
+    wayland = {
       enable = true;
-      extraConfig = ''
-[greeter]
-keyboard=onboard
-      '';
+      compositor = "kwin";
+    };
+    settings = {
+      Wayland.CompositorCommand = lib.strings.concatStringsSep " " [
+        "${lib.getBin pkgs.kdePackages.kwin}/bin/kwin_wayland"
+          "--no-global-shortcuts"
+          "--no-kactivities"
+          "--no-lockscreen"
+          "--locale1"
+          "--inputmethod maliit-keyboard"
+      ];
     };
   };
 
