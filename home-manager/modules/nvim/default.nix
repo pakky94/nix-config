@@ -9,10 +9,10 @@ in
       enable = true;
       configFile = {
         nvim_lua_config = {
-	  target = "nvim";
-	  source = ./lua-config;
-	  recursive = true;
-	};
+          target = "nvim";
+          source = ./lua-config;
+          recursive = true;
+        };
       };
     };
 
