@@ -21,6 +21,7 @@ in {
 
   fonts = {
     packages = with pkgs; [
+      font-awesome
       jetbrains-mono
       (nerdfonts.override { fonts = [ "CascadiaCode" "CascadiaMono" "FiraCode" ]; })
       noto-fonts
@@ -91,10 +92,22 @@ fi
     ];
   };
 
+  /*
   i18n.inputMethod = {
     enable = true;
     type = "ibus";
     ibus.engines = with pkgs.ibus-engines; [ anthy ];
+  };
+  */
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-anthy
+      fcitx5-configtool
+      fcitx5-with-addons
+      fcitx5-m17n
+    ];
   };
 
   programs.neovim = {
@@ -106,6 +119,7 @@ fi
     dconf-editor
     git
     gnomeExtensions.dock-from-dash
+    gnomeExtensions.kimpanel
     gnome-terminal
     gnome-tweaks
     jupiter-dock-updater-bin

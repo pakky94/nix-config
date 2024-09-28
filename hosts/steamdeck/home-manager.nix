@@ -12,6 +12,7 @@
     gcc
     go
     keepassxc
+    vlc
   ];
 
   imports = [
