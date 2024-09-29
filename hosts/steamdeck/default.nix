@@ -88,6 +88,7 @@ fi
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
+      filezilla
       qbittorrent
     ];
   };
