@@ -24,6 +24,8 @@ with lib;
 
   options.pakky.programs.kubernetes.enable = mkEnableOption "Setup kubernetes tools";
 
+  options.pakky.programs.hyprland.enable = mkEnableOption "Setup hyprland";
+
   options.pakky.programs.nvim.enable = mkEnableOption "Setup neovim";
 
   options.pakky.programs.starship.enable = mkEnableOption "Setup starship";

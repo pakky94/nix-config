@@ -5,7 +5,7 @@ let
 in {
   imports = [
     ./hardware-configuration.nix
-    ./hyprland.nix
+    ../../modules/hyprland.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -126,6 +126,7 @@ fi
     maliit-keyboard
     onboard
     steamdeck-firmware
+    usbutils
   ];
 
   services.xserver.xkb.layout = "us";
