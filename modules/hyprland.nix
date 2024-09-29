@@ -11,14 +11,11 @@ with lib;
 
   environment.systemPackages = with pkgs; [
     brillo
+    clipse
+    wl-clipboard
 
     hyprlock
 
-    # anthy
-    # fcitx5
-    # fcitx5-anthy
-    # fcitx5-mozc
-    # fcitx5-configtool
     kdePackages.qtwayland
     libsForQt5.qt5.qtwayland
 
@@ -37,14 +34,4 @@ with lib;
   ];
 
   pakky.programs.hyprland.enable = true;
-
-/*
-  xdg.configFile."waybar/config".text = ''
-'';
-*/
-
-/*
-  xdg.configFile."hypr/hyprland.conf".text = ''
-'';
-*/
 }
