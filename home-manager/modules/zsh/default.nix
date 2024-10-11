@@ -18,7 +18,11 @@ in
         # SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent.socket";
       };
 
-#       initExtra = ''
+      initExtra = ''
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+      '';
 # # SSH Agent should be running, once
 # runcount=$(ps -ef | grep "ssh-agent" | grep -v "grep" | wc -l)
 # if [ $runcount -eq 0 ]; then
@@ -27,7 +31,7 @@ in
 # fi
 #       '';
 
-      shellAliases = rec {
+      shellAliases = {
         cat = "bat --pager=never";
         lg = "lazygit";
         nixdev = "nix develop -c $SHELL";
