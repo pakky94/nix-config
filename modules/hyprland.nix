@@ -19,6 +19,7 @@ with lib;
     kdePackages.qtwayland
     libsForQt5.qt5.qtwayland
 
+    blueman
     networkmanager
     networkmanagerapplet
     pavucontrol
