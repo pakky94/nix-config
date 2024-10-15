@@ -15,6 +15,7 @@ with lib;
     wl-clipboard
 
     hyprlock
+    hyprshot
 
     kdePackages.qtwayland
     libsForQt5.qt5.qtwayland

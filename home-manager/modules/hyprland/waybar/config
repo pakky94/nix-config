@@ -6,11 +6,12 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": [
-        "hyprland/workspaces",
-    ],
+    //"modules-left": [
+        //"hyprland/workspaces"
+    //],
     "modules-center": [
-        "hyprland/window"
+        //"hyprland/window"
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "mpd",
@@ -160,7 +161,7 @@
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
-			"shutdown": "shutdown",
+			"shutdown": "shutdown now",
 			"reboot": "reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
