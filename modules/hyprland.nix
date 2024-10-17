@@ -9,6 +9,8 @@ with lib;
 
   security.polkit.enable = true;
 
+  services.blueman.enable = true;
+
   environment.systemPackages = with pkgs; [
     brillo
     clipse
@@ -20,13 +22,14 @@ with lib;
     kdePackages.qtwayland
     libsForQt5.qt5.qtwayland
 
-    blueman
+    # blueman
     networkmanager
     networkmanagerapplet
     pavucontrol
     pipewire
     polkit
 
+    notify-desktop
     swaynotificationcenter
     wireplumber
     waybar

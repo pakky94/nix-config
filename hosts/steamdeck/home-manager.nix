@@ -12,6 +12,11 @@
     gcc
     go
     keepassxc
+
+    chromium
+    obs-studio
+    stremio
+
     vlc
   ];
 
