@@ -8,6 +8,7 @@
     atac
     cargo
     cmake
+    elixir
     entr
     gcc
     go
@@ -17,6 +18,7 @@
     obs-studio
     stremio
 
+    unzip
     vlc
   ];
 

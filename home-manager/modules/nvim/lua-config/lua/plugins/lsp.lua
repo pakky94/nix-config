@@ -62,6 +62,7 @@ return {
 
     local servers = {
       -- clangd = {},
+      elixirls = {},
       gopls = {},
       nil_ls = {},
       openscad_lsp = {
