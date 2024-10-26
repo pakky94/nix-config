@@ -30,7 +30,7 @@ in {
       jetbrains-mono
       (nerdfonts.override { fonts = [ "CascadiaCode" "CascadiaMono" "FiraCode" ]; })
       noto-fonts
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       noto-fonts-emoji
     ];
     fontDir.enable = true;
