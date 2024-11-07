@@ -39,6 +39,18 @@ bindkey -M vicmd v edit-command-line
         nixdev = "nix develop -c $SHELL";
         zz = "z -";
       };
+
+      plugins = [
+        {
+          name = "fzf-tab";
+          src = pkgs.fetchFromGitHub {
+            owner = "Aloxaf";
+            repo = "fzf-tab";
+            rev = "b6e1b22458a131f835c6fe65bdb88eb45093d2d2";
+            sha256 = "4A7zpaO1rNPvS0rrmmxg56rJGpZHnw/g+x5FJd0EshI=";
+          };
+        }
+      ];
     };
 
     programs.bat = {
@@ -56,6 +68,10 @@ bindkey -M vicmd v edit-command-line
     };
 
     programs.eza = {
+      enable = true;
+    };
+
+    programs.fzf = {
       enable = true;
     };
 
