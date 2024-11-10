@@ -28,6 +28,7 @@
   ];
 
   config.programs.firefox.enable = true;
+  config.programs.nushell.enable = true;
 
   config.dconf.settings = with lib.hm.gvariant; {
     "org/gnome/desktop/input-sources" = {
@@ -62,6 +63,7 @@
       kitty.enable = true;
       nvim.enable = true;
       starship.enable = true;
+      tmux.enable = true;
       wezterm.enable = true;
       zellij.enable = true;
 

@@ -11,6 +11,7 @@
     ./kubernetes
     ./nvim
     ./starship
+    ./tmux
     ./wezterm
     ./zellij
     ./zsh

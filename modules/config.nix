@@ -30,6 +30,8 @@ with lib;
 
   options.pakky.programs.starship.enable = mkEnableOption "Setup starship";
 
+  options.pakky.programs.tmux.enable = mkEnableOption "Setup tmux";
+
   options.pakky.programs.wezterm.enable = mkEnableOption "Setup wezterm";
   options.pakky.programs.zellij.enable = mkEnableOption "Setup zellij";
 
