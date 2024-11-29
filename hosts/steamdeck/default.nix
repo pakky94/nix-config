@@ -44,7 +44,18 @@ if [[ ! -h "$HOME/.local/share/fonts" ]]; then
 fi
   '';
 
+  services.printing.enable = true;
+  services.printing.drivers = [pkgs.hplipWithPlugin];
   services.xserver.enable = true;
+
+  services.flatpak.enable = true;
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
 
 
   services.displayManager.sddm = {
@@ -123,16 +134,22 @@ fi
 
   environment.systemPackages = with pkgs; [
     dconf-editor
+    gimp
     git
     gnomeExtensions.dock-from-dash
     gnomeExtensions.kimpanel
     gnome-terminal
     gnome-tweaks
     jupiter-dock-updater-bin
+    lutris
     maliit-keyboard
     onboard
+    openscad
     steamdeck-firmware
     usbutils
+
+    poppler_utils
+    foo2zjs
   ];
 
   services.xserver.xkb.layout = "us";
