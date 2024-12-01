@@ -28,7 +28,10 @@ in {
     packages = with pkgs; [
       font-awesome
       jetbrains-mono
-      (nerdfonts.override { fonts = [ "CascadiaCode" "CascadiaMono" "FiraCode" ]; })
+      nerd-fonts.caskaydia-cove
+      nerd-fonts.caskaydia-mono
+      nerd-fonts.fira-code
+      nerd-fonts.fira-mono
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
