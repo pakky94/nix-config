@@ -16,4 +16,6 @@
     ./zellij
     ./zsh
   ];
+
+  config.xdg.configFile."ideavim/ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "${config.pakky.nixConfigDir}/home-manager/configs/ideavimrc";
 }

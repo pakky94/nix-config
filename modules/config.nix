@@ -10,6 +10,12 @@ with lib;
     };
   };
 
+  options.pakky.nixConfigDir = mkOption {
+    type = types.str;
+    default = "/home/pakky/p/nix-config";
+    description = "Dir of nix-config repo";
+  };
+
   options.pakky.programs.atuin.enable = mkEnableOption "Setup atuin";
 
   options.pakky.programs.git.enable = mkEnableOption "Setup git";

@@ -4,6 +4,8 @@
   config.home.homeDirectory = "/home/pakky";
   config.home.stateVersion = "24.05";
 
+  config.pakky.nixConfigDir = "/home/pakky/p/nix-config";
+
   config.home.packages = with pkgs; [
     atac
     cargo
@@ -17,6 +19,9 @@
     chromium
     obs-studio
     stremio
+
+    jetbrains-toolbox
+    dotnetCorePackages.dotnet_8.sdk
 
     unzip
     vlc
