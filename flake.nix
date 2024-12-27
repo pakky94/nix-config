@@ -14,12 +14,18 @@
       url = "github:Jovian-Experiments/Jovian-NixOS";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = { nixpkgs, home-manager, jovian-nixos, ... } @inputs: {
+  outputs = { nixpkgs, home-manager, jovian-nixos, hyprland-qtutils, ... } @inputs: {
     # NixOS profiles
     nixosConfigurations."steamdeck" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = {
+        inherit inputs;
+      };
       modules = [
         ./modules/core.nix
         ./hosts/steamdeck

@@ -19,9 +19,13 @@
     chromium
     obs-studio
     stremio
+    ytdownloader
 
     jetbrains-toolbox
-    dotnetCorePackages.dotnet_8.sdk
+    (with dotnetCorePackages; combinePackages [
+      sdk_8_0
+      sdk_9_0
+    ])
 
     unzip
     vlc
