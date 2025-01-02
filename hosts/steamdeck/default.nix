@@ -60,25 +60,7 @@ fi
     '';
   };
 
-
-  services.displayManager.sddm = {
-    enable = true;
-    wayland = {
-      enable = true;
-      compositor = "kwin";
-    };
-    settings = {
-      Wayland.CompositorCommand = lib.strings.concatStringsSep " " [
-        "${lib.getBin pkgs.kdePackages.kwin}/bin/kwin_wayland"
-          "--no-global-shortcuts"
-          "--no-kactivities"
-          "--no-lockscreen"
-          "--locale1"
-          "--inputmethod maliit-keyboard"
-      ];
-    };
-  };
-
+  services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
   # services.desktopManager.plasma6.enable = true;
