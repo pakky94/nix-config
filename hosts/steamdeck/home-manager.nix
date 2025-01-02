@@ -58,7 +58,6 @@
     };
   };
 
-
   config.pakky = {
     home-manager.username = "pakky";
     programs = {
@@ -69,6 +68,7 @@
         profile = "personal";
       };
 
+      hyprland.enable = true;
       kitty.enable = true;
       nvim.enable = true;
       starship.enable = true;
