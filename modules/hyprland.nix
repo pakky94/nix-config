@@ -30,10 +30,11 @@ with lib;
     polkit
 
     notify-desktop
+    rofi
     swaynotificationcenter
-    wireplumber
     waybar
-    wofi
+    wireplumber
+    wlogout
     xdg-desktop-portal-hyprland
     inputs.hyprland-qtutils.packages."${pkgs.system}".default
     # xdg-desktop-portal-wlr

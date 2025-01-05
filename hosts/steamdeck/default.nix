@@ -133,6 +133,7 @@ fi
     steamdeck-firmware
     usbutils
 
+    remmina
     poppler_utils
     foo2zjs
   ];

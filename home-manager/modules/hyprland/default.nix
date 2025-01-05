@@ -16,5 +16,13 @@ in
 
     xdg.configFile."waybar/power_menu.xml".source =
       config.lib.file.mkOutOfStoreSymlink "${configDir}/waybar/power_menu.xml";
+
+    xdg.configFile."rofi/config.rasi".source =
+      config.lib.file.mkOutOfStoreSymlink "${configDir}/rofi/config.rasi";
+
+    xdg.configFile."wlogout" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${configDir}/wlogout";
+      recursive = true;
+    };
   };
 }
