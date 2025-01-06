@@ -6,38 +6,12 @@
 
   config.pakky.nixConfigDir = "/home/pakky/p/nix-config";
 
-  config.home.packages = with pkgs; [
-    atac
-    cargo
-    cmake
-    elixir
-    entr
-    gcc
-    go
-    keepassxc
-
-    chromium
-    obs-studio
-    stremio
-    ytdownloader
-
-    jetbrains-toolbox
-    (with dotnetCorePackages; combinePackages [
-      sdk_8_0
-      sdk_9_0
-    ])
-
-    unzip
-    vlc
-  ];
-
   imports = [
+    ../../home-manager/profiles/common/desktop.nix
+    ../../home-manager/profiles/common/development.nix
     ../../home-manager/modules
     ../../home-manager/scripts
   ];
-
-  config.programs.firefox.enable = true;
-  config.programs.nushell.enable = true;
 
   config.dconf.settings = with lib.hm.gvariant; {
     "org/gnome/desktop/input-sources" = {

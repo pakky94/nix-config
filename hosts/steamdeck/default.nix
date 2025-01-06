@@ -5,6 +5,7 @@ let
 in {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/desktop.nix
     ../../modules/hyprland.nix
   ];
 
@@ -50,15 +51,6 @@ fi
   services.printing.enable = true;
   services.printing.drivers = [pkgs.hplipWithPlugin];
   services.xserver.enable = true;
-
-  services.flatpak.enable = true;
-  systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
 
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;

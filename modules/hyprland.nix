@@ -38,8 +38,6 @@ with lib;
     xdg-desktop-portal-hyprland
     inputs.hyprland-qtutils.packages."${pkgs.system}".default
     # xdg-desktop-portal-wlr
-
-    inputs.zen-browser.packages."${pkgs.system}".default
   ];
 
   pakky.programs.hyprland.enable = true;
