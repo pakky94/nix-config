@@ -39,6 +39,25 @@
       ];
     };
 
+    /*
+    nixosConfigurations."winmax2" = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = {
+        inherit inputs;
+      };
+      modules = [
+        ./modules/core.nix
+        ./hosts/winmax2
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.pakky = import ./hosts/winmax2/home-manager.nix;
+        }
+      ];
+    };
+    */
+
     # Home manager standalone profiles
     homeConfigurations."wsl-personal" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
