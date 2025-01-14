@@ -15,7 +15,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
+    hyprdisplay = {
+      url ="github:pakky94/hyprdisplay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 

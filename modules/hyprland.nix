@@ -38,6 +38,7 @@ with lib;
     wlogout
     xdg-desktop-portal-hyprland
     # xdg-desktop-portal-wlr
+    inputs.hyprdisplay.packages."${pkgs.system}".hyprdisplay
   ];
 
   pakky.programs.hyprland.enable = true;
