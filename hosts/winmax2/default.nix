@@ -95,4 +95,10 @@ in {
   time.timeZone = "Europe/Rome";
 
   system.stateVersion = "24.05";
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 15d";
+  };
 }
