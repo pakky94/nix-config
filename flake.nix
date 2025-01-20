@@ -15,10 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprdisplay = {
-      url ="github:pakky94/hyprdisplay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    hyprdisplay.url ="github:pakky94/hyprdisplay";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
