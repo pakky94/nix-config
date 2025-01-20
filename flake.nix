@@ -40,7 +40,6 @@
       ];
     };
 
-    /*
     nixosConfigurations."winmax2" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
@@ -57,7 +56,6 @@
         }
       ];
     };
-    */
 
     # Home manager standalone profiles
     homeConfigurations."wsl-personal" = home-manager.lib.homeManagerConfiguration {
