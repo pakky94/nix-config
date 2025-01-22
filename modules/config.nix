@@ -16,6 +16,14 @@ with lib;
     description = "Dir of nix-config repo";
   };
 
+  options.pakky.hostName = mkOption {
+      type = types.str;
+      default = "none";
+      description = "Host name";
+      example = "steamdeck | winmax2";
+  };
+
+
   options.pakky.programs.atuin.enable = mkEnableOption "Setup atuin";
 
   options.pakky.programs.git.enable = mkEnableOption "Setup git";

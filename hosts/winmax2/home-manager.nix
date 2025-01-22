@@ -5,6 +5,7 @@
   config.home.stateVersion = "24.05";
 
   config.pakky.nixConfigDir = "/home/pakky/p/nix-config";
+  config.pakky.hostName = "winmax2";
 
   imports = [
     ../../home-manager/profiles/common/desktop.nix
