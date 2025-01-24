@@ -91,7 +91,7 @@ in {
   users.users."${myUsername}" = {
     isNormalUser = true;
     description = myUserdescription;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "video" "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       filezilla
@@ -135,4 +135,11 @@ in {
     dates = "weekly";
     options = "--delete-older-than 15d";
   };
+
+  services.udev.extraRules = ''
+ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
+ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
+ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chgrp input /sys/class/leds/%k/brightness"
+ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/leds/%k/brightness"
+'';
 }
