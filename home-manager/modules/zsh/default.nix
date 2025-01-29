@@ -32,7 +32,7 @@ bindkey -M vicmd v edit-command-line
 #       '';
 
       shellAliases = {
-        acestreamstart = "docker run --name acestream -d --rm -p 6878:6878 blaiseio/acelink";
+        acestreamstart = "docker run --name acestream -d --rm -p 6878:6878 docker.io/blaiseio/acelink";
         acestreamstop = "docker stop acestream";
         cat = "bat --pager=never";
         lg = "lazygit";

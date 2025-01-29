@@ -9,6 +9,7 @@ in {
     ../../modules/fonts.nix
     ../../modules/hyprland.nix
     ../../modules/input.nix
+    ../../modules/podman.nix
   ];
 
   hardware.bluetooth = {
@@ -71,15 +72,10 @@ in {
     };
   };
 
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
-
   services.syncthing = {
     enable = true;
     user = "${myUsername}";
-    dataDir = "/home/${myUsername}/Sync";    # Default folder for new synced folders
+    dataDir = "/home/${myUsername}/Sync/Default";    # Default folder for new synced folders
     configDir = "/home/${myUsername}/Sync/.config/syncthing";   # Folder for Syncthing's settings and keys
   };
 
@@ -91,8 +87,19 @@ in {
   users.users."${myUsername}" = {
     isNormalUser = true;
     description = myUserdescription;
-    extraGroups = [ "video" "wheel" ];
+    extraGroups = [ "podman" "video" "wheel" ];
     shell = pkgs.zsh;
+
+    subGidRanges = [ {
+      count = 65536;
+      startGid = 1001;
+    } ];
+
+    subUidRanges = [ {
+      count = 65536;
+      startUid = 1001;
+    } ];
+
     packages = with pkgs; [
       filezilla
       qbittorrent
@@ -117,7 +124,6 @@ in {
     maliit-keyboard
     onboard
     openscad
-    # steamdeck-firmware
     usbutils
 
     remmina

@@ -9,6 +9,9 @@
     gcc
     go
 
+    jaq
+    jq
+
     jetbrains-toolbox
     (with dotnetCorePackages; combinePackages [
       sdk_8_0
