@@ -74,6 +74,14 @@
       ];
     };
 
+    homeConfigurations."winmax2hm" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = [
+        ./modules/core.nix
+        ./home-manager/profiles/winmax2.nix
+      ];
+    };
+
     homeConfigurations."wsl-work" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [
