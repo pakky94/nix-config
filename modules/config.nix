@@ -27,6 +27,7 @@ with lib;
   options.pakky.programs.atuin.enable = mkEnableOption "Setup atuin";
 
   options.pakky.programs.git.enable = mkEnableOption "Setup git";
+  options.pakky.programs.git.overrideGitSsh = mkEnableOption "Setup git";
   options.pakky.programs.git.profile = mkOption {
       type = types.str;
       default = "personal";

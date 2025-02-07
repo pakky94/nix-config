@@ -47,6 +47,7 @@
 
       git = {
         enable = true;
+        overrideGitSsh = true;
         profile = "personal";
       };
 

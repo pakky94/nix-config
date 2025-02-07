@@ -15,6 +15,7 @@ in
       dotDir = ".config/zsh";
       sessionVariables = { 
         ZDOTDIR = "/home/${cfg.home-manager.username}/.config/zsh"; 
+        ${if config.pakky.programs.git.overrideGitSsh then "GIT_SSH" else null} = "/usr/bin/ssh";
         # SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent.socket";
       };
 
