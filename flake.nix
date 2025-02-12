@@ -17,7 +17,7 @@
 
     hyprdisplay.url ="github:pakky94/hyprdisplay";
 
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    # zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = { nixpkgs, home-manager, jovian-nixos, ... } @inputs: {

@@ -11,7 +11,7 @@
 
   config.programs.firefox.enable = true;
 
-  config.environment.systemPackages = [
-    inputs.zen-browser.packages."${pkgs.system}".default
-  ];
+  # config.environment.systemPackages = [
+  #   inputs.zen-browser.packages."${pkgs.system}".default
+  # ];
 }
