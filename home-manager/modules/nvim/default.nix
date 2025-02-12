@@ -6,7 +6,6 @@ let
 in
 {
   config = mkIf cfg.enable {
-  /*
     xdg = {
       enable = true;
       configFile = {
@@ -17,14 +16,15 @@ in
         };
       };
     };
-  */
+  /*
     xdg = {
       enable = true;
       configFile = {
         target = "nvim";
-        source = config.lib.file.mkOutOfStoreSymlink "${configDir}/nvim"
-      }
+        source = config.lib.file.mkOutOfStoreSymlink "${configDir}/nvim";
+      };
     };
+  */
 
     programs.neovim = {
       enable = true;

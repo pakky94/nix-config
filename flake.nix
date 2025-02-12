@@ -22,6 +22,7 @@
 
   outputs = { nixpkgs, home-manager, jovian-nixos, ... } @inputs: {
     # NixOS profiles
+
     nixosConfigurations."steamdeck" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
@@ -37,6 +38,23 @@
           home-manager.users.pakky = import ./hosts/steamdeck/home-manager.nix;
         }
         jovian-nixos.nixosModules.default
+      ];
+    };
+
+    nixosConfigurations."vmware" = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = {
+        inherit inputs;
+      };
+      modules = [
+        ./modules/core.nix
+        ./hosts/vmware
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.pakky = import ./hosts/vmware/home-manager.nix;
+        }
       ];
     };
 
