@@ -8,7 +8,7 @@
   config.pakky.hostName = "winmax2";
 
   imports = [
-    ../../home-manager/profiles/common/desktop.nix
+    # ../../home-manager/profiles/common/desktop.nix
     ../../home-manager/profiles/common/development.nix
     ../../home-manager/modules
     ../../home-manager/scripts
