@@ -1,5 +1,46 @@
 # NixOS config
 
+## WSL installation
+
+### Nix
+
+```sh
+sh <(curl -L https://nixos.org/nix/install) --daemon
+```
+
+#### Enable flakes & nix-commands
+
+In `/etc/nix/nix.conf` add
+
+```
+experimental-features = nix-command flakes
+```
+
+#### Home-manager
+
+```sh
+nix run home-manager/master -- switch --flake ~/p/nix-config#wsl-personal
+```
+
+#### Other stuff
+
+```sh
+sudo apt-get install libfuse2 xdg-utils
+```
+
+```sh
+sudo add-apt-repository ppa:wslutilities/wslu
+sudo apt update
+sudo apt install wslu
+```
+
+### Jetbrains Toolbox
+
+```sh
+sudo curl -fsSL https://raw.githubusercontent.com/nagygergo/jetbrains-toolbox-install/master/jetbrains-toolbox.sh | bash
+```
+
+
 ## SteamDeck installation
 
 

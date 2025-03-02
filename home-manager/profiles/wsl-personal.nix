@@ -1,12 +1,16 @@
 { lib, pkgs, config, ... }: {
   pakky.home-manager.username = "pakky";
 
+  nix.package = pkgs.nix;
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "pakky";
   home.homeDirectory = "/home/pakky";
 
   home.stateVersion = "24.05"; # Please read the comment before changing.
+
+  nixpkgs.config.allowUnfree = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -17,6 +21,11 @@
     entr
     gcc
     go
+
+    (with dotnetCorePackages; combinePackages [
+      sdk_8_0
+      sdk_9_0
+    ])
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

@@ -7,6 +7,8 @@
 
   home.stateVersion = "24.05";
 
+  nixpkgs.config.allowUnfree = true;
+
   nix = {
     package = pkgs.nix;
     settings.experimental-features = [ "nix-command" "flakes" ];
@@ -19,6 +21,11 @@
     entr
     gcc
     go
+
+    (with dotnetCorePackages; combinePackages [
+      sdk_8_0
+      sdk_9_0
+    ])
   ];
 
   home.file = {
