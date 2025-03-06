@@ -2,8 +2,11 @@
 with lib;
 let cfg = config.pakky.programs.kubernetes; in
 {
-  home.packages = [
-    pkgs.k9s
-    pkgs.stern
+  home.packages = with pkgs; [
+    k9s
+    kubectl
+    kubectx
+    kubernetes-helm
+    stern
   ];
 }
