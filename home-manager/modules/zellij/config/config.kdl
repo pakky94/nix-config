@@ -231,6 +231,7 @@ serialize_pane_viewport true
 
 default_layout "compact"
 mouse_mode false
+show_startup_tips false
 
 theme "one-half-dark"
 themes {
