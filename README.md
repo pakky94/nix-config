@@ -36,8 +36,10 @@ sudo apt install wslu
 
 ### Jetbrains Toolbox
 
+Fix wayland socket with symlink
+
 ```sh
-sudo curl -fsSL https://raw.githubusercontent.com/nagygergo/jetbrains-toolbox-install/master/jetbrains-toolbox.sh | bash
+systemctl --user enable symlink-wayland-socket.service
 ```
 
 

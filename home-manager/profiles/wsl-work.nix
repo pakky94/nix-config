@@ -15,17 +15,6 @@
   };
 
   home.packages = with pkgs; [
-    atac
-    cargo
-    cmake
-    entr
-    gcc
-    go
-
-    (with dotnetCorePackages; combinePackages [
-      sdk_8_0
-      sdk_9_0
-    ])
   ];
 
   home.file = {
@@ -61,5 +50,7 @@
   imports = [
     ../modules
     ../scripts
+    ./common/development.nix
+    ./common/wsl-gui-fixes.nix
   ];
 }

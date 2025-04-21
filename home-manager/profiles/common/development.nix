@@ -1,4 +1,11 @@
 { pkgs, ... }:
+let
+  dotnetPkg =
+    (with pkgs.dotnetCorePackages; combinePackages [
+     sdk_8_0
+     sdk_9_0
+    ]);
+in
 {
   config.home.packages = with pkgs; [
     atac
@@ -13,11 +20,12 @@
     jq
 
     jetbrains-toolbox
-    (with dotnetCorePackages; combinePackages [
-      sdk_8_0
-      sdk_9_0
-    ])
+    dotnetPkg
   ];
+
+  config.home.sessionVariables = {
+    DOTNET_ROOT = "${dotnetPkg}";
+  };
 
   config.programs.nushell.enable = true;
 }
