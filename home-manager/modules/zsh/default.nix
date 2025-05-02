@@ -68,9 +68,9 @@ bindkey -M vicmd v edit-command-line
       enable = true;
     };
 
-    programs.eza = {
-      enable = true;
-    };
+    # programs.eza = {
+    #   enable = true;
+    # };
 
     programs.fzf = {
       enable = true;

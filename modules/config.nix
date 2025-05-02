@@ -41,6 +41,9 @@ with lib;
 
   options.pakky.programs.hyprland.enable = mkEnableOption "Setup hyprland";
 
+  options.pakky.programs.nushell.default = mkEnableOption "Use nushell as default shell";
+  options.pakky.programs.nushell.enable = mkEnableOption "Setup nushell";
+
   options.pakky.programs.nvim.enable = mkEnableOption "Setup neovim";
 
   options.pakky.programs.starship.enable = mkEnableOption "Setup starship";

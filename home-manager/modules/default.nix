@@ -10,6 +10,7 @@
     ./hyprland
     ./kitty
     ./kubernetes
+    ./nushell
     ./nvim
     ./starship
     ./tmux

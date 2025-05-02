@@ -81,12 +81,16 @@
       };
 
       kubernetes.enable = true;
+      nushell = {
+        default = true;
+        enable = true;
+      };
       nvim.enable = true;
       starship.enable = true;
       zellij.enable = true;
 
       zsh = {
-        default = true;
+        default = false;
         enable = true;
       };
     };

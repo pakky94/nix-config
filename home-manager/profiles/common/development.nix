@@ -18,6 +18,8 @@ in
 
     jaq
     jq
+    gnumake
+    ruby
 
     jetbrains-toolbox
     dotnetPkg
@@ -26,6 +28,4 @@ in
   config.home.sessionVariables = {
     DOTNET_ROOT = "${dotnetPkg}";
   };
-
-  config.programs.nushell.enable = true;
 }
