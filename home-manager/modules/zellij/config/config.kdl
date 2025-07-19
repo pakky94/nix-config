@@ -230,7 +230,7 @@ serialize_pane_viewport true
 // theme_dir "/path/to/my/theme_dir"
 
 default_layout "compact"
-mouse_mode false
+mouse_mode true
 show_startup_tips false
 
 theme "one-half-dark"
